@@ -13,7 +13,7 @@ export default function Home() {
       <MaxWidthWrapper>
         <section id="home" className="grid grid-rows-3 md:grid-cols-7">
           <div className="w-full h-screen flex justify-center items-center md:col-span-3">
-            <div className="md:w-[19rem] md:h-[19rem] lg:w-[21rem] lg:h-[21rem] relative flex justify-center items-center overflow-hidden rounded-full z-20  bg-blue-500">
+            <div className="md:w-[19rem] md:h-[19rem] lg:w-[21rem] lg:h-[21rem] relative flex justify-center items-center overflow-hidden rounded-full z-10  bg-blue-500">
               <div className="md:w-72 md:h-72 lg:w-80 lg:h-80 relative flex justify-center items-center overflow-hidden rounded-full bg-white ">
                 <div className="md:w-56 md:h-56 lg:w-64 lg:h-64 relative flex justify-center items-center overflow-hidden rounded-full bg-blue-500 ">
                   <div className="md:w-48 md:h-48 lg:w-56 lg:h-56 relative overflow-hidden rounded-full ">

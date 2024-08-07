@@ -23,6 +23,7 @@ export const links = [
     link: "#certificates",
   },
 ];
+
 const NavList = () => {
   return (
     <>

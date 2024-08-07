@@ -89,3 +89,37 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
+/* ANIMATE
+/* ======================================================================= */
+/* ROTATE
+============================================== */
+@keyframes rotateIn {
+  from {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateOut {
+  from {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.rotate-in {
+  animation: rotateIn 0.5s forwards;
+}
+
+.rotate-out {
+  animation: rotateOut 0.5s backwards;
+}
