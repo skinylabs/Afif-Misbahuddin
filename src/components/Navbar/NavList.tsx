@@ -31,7 +31,7 @@ const NavList = () => {
         <li key={index}>
           <Link
             href={link.link}
-            className="nav-link h-16 flex justify-center items-center hover:text-blue-500 ease-in-out duration-200"
+            className="nav-link h-16 flex justify-center items-center hover:text-blue-500 ease-in-out duration-200 "
           >
             {link.name}
           </Link>

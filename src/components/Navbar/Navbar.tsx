@@ -2,11 +2,12 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import NavList from "./NavList"; // Pastikan jalur impor benar
 import { Icons } from "../Icons/icons";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import Link from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -32,16 +33,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-[100]  duration-300 ${
+      className={`fixed w-full duration-300 z-[100]  ${
         scrolled ? "bg-white" : ""
       } `}
     >
       <div className="w-full font-medium  px-4 z-[100]">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between 2xl:h-24">
           <div>
             <Icons.logo
               className={`flex w-10 h-10 ease-in-out duration-300 transition-all ${
-                scrolled ? "fill-blue-500" : "fill-white"
+                scrolled
+                  ? "fill-blue-500 md:fill-blue-500"
+                  : " fill-blue-500 md:fill-white"
               } `}
             />
           </div>
@@ -49,11 +52,29 @@ const Navbar = () => {
             <NavList />
           </ul>
           <div className="flex gap-4 items-center">
-            <div className={`${open ? "hidden" : ""} lg:block`}>
-              <Button variant="default">Contact Me</Button>
+            <div
+              className={`
+                ${open ? "hidden" : ""}
+                ${scrolled ? "block" : "hidden"}
+                ${!open && scrolled ? "block" : ""}
+                md:block lg:block 
+              `}
+            >
+              <Link
+                href="/"
+                className={`btn ${buttonVariants({
+                  variant: "default",
+                  size: "default",
+                })} lg:${buttonVariants({
+                  variant: "default",
+                  size: "default",
+                })} 2xl:${buttonVariants({ variant: "default", size: "xl" })}`}
+              >
+                Contact Me
+              </Link>
             </div>
             <div
-              className="text-3xl lg:hidden z-[100]"
+              className="text-3xl lg:hidden z-[101]"
               onClick={() => setOpen(!open)}
             >
               {open ? (
@@ -62,6 +83,8 @@ const Navbar = () => {
                     className={`w-10 h-10 transition-transform duration-300 ${
                       open ? "rotate-in" : "rotate-out"
                     }`}
+                    fill1="text-slate-500"
+                    fill2="#E62129"
                   />
                 </div>
               ) : (
